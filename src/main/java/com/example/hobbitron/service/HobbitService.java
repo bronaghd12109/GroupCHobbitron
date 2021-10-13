@@ -1,7 +1,7 @@
 package com.example.hobbitron.service;
 
-import com.example.hobbitron.model.Hobbit;
-import com.example.hobbitron.repository.HobbitRepository;
+import com.example.hobbitron.model.DriverDetails;
+import com.example.hobbitron.repository.DriverDetailsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,17 +9,17 @@ import java.util.List;
 @Service
 public class HobbitService {
 
-    private final HobbitRepository hobbitRepository;
+    private final DriverDetailsRepository driverDetailsRepository;
 
-    public HobbitService(HobbitRepository hobbitRepository) {
-        this.hobbitRepository = hobbitRepository;
+    public HobbitService(DriverDetailsRepository driverDetailsRepository) {
+        this.driverDetailsRepository = driverDetailsRepository;
     }
 
-    public List<Hobbit> getAll() {
-        return hobbitRepository.findAll();
+    public List<DriverDetails> getAll() {
+        return driverDetailsRepository.findAll();
     }
 
-    public Hobbit save(Hobbit hobbit) {
-        return hobbitRepository.save(hobbit);
+    public DriverDetails save(DriverDetails driverDetails) {
+        return driverDetailsRepository.save(driverDetails);
     }
 }
